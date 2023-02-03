@@ -1,0 +1,2 @@
+class MissionPartiesController < ApplicationController
+end
