@@ -52,6 +52,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_03_000123) do
   create_table "players", force: :cascade do |t|
     t.string "alias"
     t.string "avatar"
+    t.string "username"
+    t.string "password_digest"
     t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

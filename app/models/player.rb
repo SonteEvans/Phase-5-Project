@@ -7,4 +7,6 @@ class Player < ApplicationRecord
 
     has_many :comments
     has_many :missions, through: :comments
+
+    has_secure_password
 end

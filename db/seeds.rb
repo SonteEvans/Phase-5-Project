@@ -5,26 +5,36 @@ puts "🧝🏻‍♂️ Seeding players..."
 user1 = Player.create(
     avatar: "",
     alias:"PickleTickle",
+    username:"pickle123",
+    password_digest:"why",
     level: rand(1..80)
 )
 user2 = Player.create(
     avatar: "",
     alias:"UnicornDust",
+    username:"dustybum",
+    password_digest:"please",
     level: rand(1..80)
 )
 user3 = Player.create(
     avatar: "",
     alias:"Degoon",
+    username:"Degoon100",
+    password_digest:"NeverFold",
     level: rand(1..80)
 )
 user4 = Player.create(
     avatar: "",
     alias:"MartyMart",
+    username:"MartyMarty",
+    password_digest:"riick",
     level: rand(1..80)
 )
 user5 = Player.create(
     avatar: "",
     alias:"HolyBunz",
+    username:"BunzOfSteel",
+    password_digest:"yams",
     level: rand(1..80)
 )
 
