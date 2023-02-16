@@ -1,7 +1,7 @@
 function PlayerPage({player}){
     return (
        
-        <div className="main-container">
+        <div>
             <h2>Welcome, {player.username}</h2>
             <textarea/>
             

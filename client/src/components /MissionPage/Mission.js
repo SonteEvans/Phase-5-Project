@@ -4,7 +4,16 @@ import MissionForm from "react"
 
 function Mission(){
     const [missions, setMission] = useState([])
-    // console.log("whhhhy")
+    // const [partyList, setPartyList] = useState([])
+    
+    // const handleJoinParty = () => {
+    //     setPartyList([...partyList,])
+    // }
+
+    // const handleLeaveParty = () => {
+        
+    // }
+   
 
     useEffect(() => {
         fetch("/missions")
@@ -19,8 +28,15 @@ function Mission(){
     ))
     return (
         <div>
-            <h2>Try Hard Missions</h2>
             {missionCard}
+            <div>
+                {/* <button type="button" className="add-btn" onClick={handleJoinParty}>
+                    <span> Join Party</span>
+                </button> */}
+            </div>
+            {/* <button type="button" classname="remove-btn" onCLick={handleLeaveParty}>
+                <span>Leave Party</span>
+            </button> */}
             {/* <MissionForm /> */}
         </div>
         
