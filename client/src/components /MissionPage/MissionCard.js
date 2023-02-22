@@ -7,7 +7,7 @@ function MissionCard({mission}) {
     const [partyList, setPartyList] = useState([])
 
     const handleJoinParty = () => {
-        setPartyList([...partyList,])
+        setPartyList([...partyList])
     }
    
     const handleLeaveParty = () => {
@@ -29,7 +29,7 @@ useEffect(() => {
                     <span> Join Party</span>
             </button>
             <div>
-            <button type="button" classname="remove-btn" onClick={handleLeaveParty}>
+            <button type="button" className="remove-btn" onClick={handleLeaveParty}>
                 <span>Leave Party</span>
             </button>
             </div>

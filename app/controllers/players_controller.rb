@@ -10,11 +10,16 @@ class PlayersController < ApplicationController
       def show
         render json: @current_player
       end
+      def update
+        player = Player.find_by(id:params[:id])
+        player.update(user_params)
+        render json: player, status: :accepted
+      end
     
       private
     
       def user_params
-        params.permit(:username, :password, :alias, :avatar, :level )
+        params.permit(:username, :password)
       end
     
 end

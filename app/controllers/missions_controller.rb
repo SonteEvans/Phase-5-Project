@@ -8,8 +8,9 @@ class MissionsController < ApplicationController
     # create method
     # step one create create route
     def create 
+        puts raid_params
         mission = Mission.create!(raid_params)
-        render json: mission, status: :create
+        render json: mission, status: :created
     end
     
     

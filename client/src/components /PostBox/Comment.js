@@ -4,6 +4,8 @@ import CommentForm from "./CommentForm"
 
 
 
+
+
 function Comment (){ 
     const [comment, setComment] = useState([])
     const [content, setContent] =useState("")
@@ -27,12 +29,13 @@ function Comment (){
 
     const commentCard = comment?.map((comment)=>(
         <CommentCard 
-            comment = {comment}
             key = {comment.id}
+            comment = {comment}
         />
     ))
 
     return (
+      
         <div className="main-container">
             {moreContent.map((text) => (
                 <div className="comment-container">

@@ -1,17 +1,12 @@
 import {useState, useEffect} from "react"
 import MissionCard from "./MissionCard"
-import MissionForm from "react"
+
 
 function Mission(){
     const [missions, setMission] = useState([])
-    // const [partyList, setPartyList] = useState([])
-    
-    // const handleJoinParty = () => {
-    //     setPartyList([...partyList,])
-    // }
-
-    // const handleLeaveParty = () => {
-        
+   
+    // function handleAddMisison(newMisison){
+    //     setMission([...missions, newMisison])
     // }
    
 
@@ -22,22 +17,13 @@ function Mission(){
     }, [])
     
     const missionCard = missions.map((mission) => (
-        <MissionCard 
+        <MissionCard key={mission.id}
           mission = {mission}
         />
     ))
     return (
-        <div>
+        <div> 
             {missionCard}
-            <div>
-                {/* <button type="button" className="add-btn" onClick={handleJoinParty}>
-                    <span> Join Party</span>
-                </button> */}
-            </div>
-            {/* <button type="button" classname="remove-btn" onCLick={handleLeaveParty}>
-                <span>Leave Party</span>
-            </button> */}
-            {/* <MissionForm /> */}
         </div>
         
 
