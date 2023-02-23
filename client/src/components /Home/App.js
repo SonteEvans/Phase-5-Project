@@ -11,6 +11,7 @@ import Mission from "../MissionPage/Mission";
 import GameSearch from "../Game/GameSearch";
 import MissionForm from "../MissionPage/MissionForm";
 import PlayerEditForm from "./PlayerEditForm";
+import EditMissionForm from "../MissionPage/EditMissionForm"
 
 
 
@@ -20,6 +21,7 @@ function App(){
 const [player, setUser] = useState(null)
 const [games, setGame] = useState([])
 const [search, setSearch] = useState("")
+const [mission, setMission] = useState([])
 // const [missions, setMission] = useState([])
 
 
@@ -39,6 +41,14 @@ useEffect(() => {
         .then(r => r.json())
         .then(games => {
             setGame(games)})
+
+    },[])
+
+    useEffect(()=>{
+        fetch("/missions")
+        .then(r => r.json())
+        .then(raids => {
+            setMission(raids)})
 
     },[])
 
@@ -82,6 +92,10 @@ return (
 
         <Route exact path="/players/:id">
         <PlayerEditForm  player={player} setUser={setUser}/>
+        </Route>
+
+        <Route exact path="/missions/:id">
+        <EditMissionForm mission={mission} />
         </Route>
     </Switch>
 </div>

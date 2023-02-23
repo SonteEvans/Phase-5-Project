@@ -12,7 +12,17 @@ class MissionsController < ApplicationController
         mission = Mission.create!(raid_params)
         render json: mission, status: :created
     end
-    
+
+    def update
+        mission = Mission.find_by!(id:params[:id])
+        mission.update(raid_params)
+        render json: mission
+    end
+    def destroy
+        mission = Mission.find_by(id:params[:id])
+        mission.destroy
+        head :no_content
+    end
     
     private
     # step two create params in private

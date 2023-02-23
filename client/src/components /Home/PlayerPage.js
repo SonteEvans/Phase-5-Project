@@ -10,22 +10,22 @@ function PlayerPage({player,setUser}){
     
     return (
          
-        <div>
+        <div class="btn-group" role="group" aria-label="Basic example">
             <h2>Welcome, {player.username}</h2>
-            <ul>
-                <li>
+            <ul class="nav nav-pills">
+                <li class="btn btn-primary" >
                 <Link to="/Mission">Mission</Link>
                 </li>
-                <li>
+                <li class="btn btn-primary">
                 <Link to="/Games">Games</Link>
                 </li>
-                <li>
+                <li class="btn btn-primary">
                 <Link to="/Comment">Post</Link>
                 </li>
-                <li>
+                <li class="btn btn-primary">
                 <Link to="/MissionForm">New Mission</Link>    
                 </li>
-                <li>
+                <li class="btn btn-primary">
                 <Link to={`/players/${player.id}`}>Edit Profile</Link>
                 </li>
             </ul> 

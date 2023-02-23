@@ -1,10 +1,12 @@
 import {useState, useEffect} from "react"
 import PlayerPage from "../Home/PlayerPage"
+import {Link} from "react-router-dom"
 
-function MissionCard({mission}) {
-    const {title, description} = mission
+function MissionCard({mission, onDelete, onUpdate}) {
+    const {id,title, description} = mission
     const [party, setParty] = useState([])
     const [partyList, setPartyList] = useState([])
+
 
     const handleJoinParty = () => {
         setPartyList([...partyList])
@@ -21,6 +23,16 @@ useEffect(() => {
     .then(group => setParty(group))
 }, [])
 
+function handleDelete(){
+    fetch(`/missions/${id}`, {
+        method: "DELETE",
+    }).then((r) => {
+        if (r.ok) {
+            onDelete(mission)
+        }
+    })
+}
+
     return(
         <div>
             <h1>{title}</h1>
@@ -34,6 +46,10 @@ useEffect(() => {
             </button>
             </div>
             <p>{party[0]?.player.username}</p>
+            
+            <button><Link to={`/missions/${mission.id}`}>New Mission</Link></button>
+            <button onClick={handleDelete}>Delete Mission</button>
+          
         </div>
     )
 }

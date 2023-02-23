@@ -15,10 +15,26 @@ function Mission(){
         .then(mission => mission.json())
         .then(mission => setMission(mission))
     }, [])
+
+    function handleDelete(deleteMission) {
+        setMission((missions) =>
+        missions.filter((mission) => mission.id != deleteMission.id)
+        )
+    }
+
+    function handleUpdate(updateMission){
+        setMission((missions) => 
+        missions.map((mission) => {
+            return mission.id === updateMission.id ? updateMission : mission
+        })
+        )
+    }
     
     const missionCard = missions.map((mission) => (
         <MissionCard key={mission.id}
           mission = {mission}
+          onDelete={handleDelete}
+          onUpdate={handleUpdate}
         />
     ))
     return (
